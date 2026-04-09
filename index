@@ -1,0 +1,262 @@
+:root {
+    --midnight-teal: #0b3d3d;
+    --saffron-gold: #d4af37;
+    --card-bg: #fcfbf7;
+    --gold-grad: linear-gradient(145deg, #f9f295, #b8860b);
+}
+
+body {
+    background: #eef1f1;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.card-container {
+    width: 400px;
+    background: var(--card-bg);
+    border-radius: 35px;
+    padding: 30px;
+    border: 1px solid #e0dbcd;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px); /* Subtle texture */
+    background-size: 20px 20px;
+}
+
+/* Profile Section */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.profile-pic-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    padding: 4px;
+    background: var(--gold-grad);
+    border-radius: 50%;
+}
+
+.profile-pic-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.check-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    background: #1a4d4d;
+    color: white;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.advisor-info h1 {
+    font-size: 22px;
+    margin: 0;
+    color: var(--midnight-teal);
+}
+
+.advisor-info .title {
+    color: var(--saffron-gold);
+    margin: 2px 0;
+    font-weight: 600;
+}
+
+/* Tags */
+.tags-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tag-item {
+    background: #f1f4f4;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--midnight-teal);
+    border: 1px solid #d8e2e2;
+}
+
+/* Score Section with Ring */
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 25px;
+    padding-right: 10px;
+}
+
+.score-details h3 {
+    margin: 0;
+    color: var(--midnight-teal);
+}
+
+.score-details p {
+    font-size: 11px;
+    color: #777;
+    max-width: 180px;
+}
+
+.top-rank {
+    color: var(--saffron-gold);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 50% Size Ring Logic */
+.score-ring-outer {
+    width: 100px;
+    height: 100px;
+    background: var(--gold-grad);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(184, 134, 11, 0.3);
+}
+
+.score-ring-inner {
+    width: 88px;
+    height: 88px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.score-num {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--midnight-teal);
+}
+
+.score-label {
+    background: var(--midnight-teal);
+    color: var(--saffron-gold);
+    font-size: 8px;
+    width: 100%;
+    text-align: center;
+    padding: 3px 0;
+    position: absolute;
+    bottom: 15px;
+}
+
+/* Metrics Row */
+.metrics-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.metric {
+    flex: 1;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-bottom: 3px solid var(--saffron-gold);
+}
+
+.metric strong { display: block; color: var(--midnight-teal); font-size: 16px; }
+.metric span { font-size: 10px; color: #999; }
+
+/* Button */
+.primary-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--midnight-teal);
+    color: var(--saffron-gold);
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(11, 61, 61, 0.3);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Advisor Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Profile Header -->
+        <div class="card-header">
+            <div class="profile-pic-wrapper">
+                <img src="https://via.placeholder.com/100" alt="Advisor">
+                <div class="check-badge">✔</div>
+            </div>
+            <div class="advisor-info">
+                <h1>Krishna Mohan Noti</h1>
+                <p class="title">Chief Life Planner</p>
+                <p class="location">📍 Nellore, AP</p>
+            </div>
+        </div>
+
+        <!-- Tags Section -->
+        <div class="tags-grid">
+            <div class="tag-item">🛡️ Life Insurance</div>
+            <div class="tag-item">➕ Health Insurance</div>
+            <div class="tag-item">🏆 Founding Member</div>
+            <div class="tag-item">🚩 MDRT Member</div>
+        </div>
+
+        <!-- Score Section -->
+        <div class="score-container">
+            <div class="score-details">
+                <h3>YVITY Score</h3>
+                <p>Based on experience, client feedback & performance</p>
+                <span class="top-rank">Top 10% Advisor</span>
+            </div>
+            
+            <!-- Small 50% Reduced Score Ring -->
+            <div class="score-ring-outer">
+                <div class="score-ring-inner">
+                    <span class="score-num">87<small>/100</small></span>
+                    <div class="score-label">YVITY SCORE</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Row -->
+        <div class="metrics-row">
+            <div class="metric"><strong>10+</strong><span>Years Exp.</span></div>
+            <div class="metric"><strong>32</strong><span>Reviews</span></div>
+            <div class="metric"><strong>12</strong><span>Recommnds</span></div>
+            <div class="metric"><strong>200+</strong><span>Clients</span></div>
+        </div>
+
+        <!-- Action Button -->
+        <button class="primary-btn">View Profile &rarr;</button>
+    </div>
+
+</body>
+</html>
