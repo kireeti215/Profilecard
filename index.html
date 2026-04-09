@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Profile Card</title>
-<style>
+<title>Premium Profile Card</title>
 
+<style>
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: #f3f3f3;
+    font-family: 'Segoe UI', sans-serif;
 }
 
+/* Card */
 .card {
-    width: 350px;
+    width: 380px;
     margin: 40px auto;
     padding: 20px;
     border-radius: 20px;
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* Profile */
 .profile {
     display: flex;
     align-items: center;
@@ -38,68 +40,83 @@ body {
 }
 
 .role {
-    color: #777;
+    color: #888;
     font-size: 14px;
 }
 
+/* Tags */
 .tags {
     margin: 15px 0;
 }
 
 .tag {
     display: inline-block;
-    padding: 6px 10px;
-    background: #eee;
+    padding: 6px 12px;
+    background: #f1f1f1;
     border-radius: 20px;
     font-size: 12px;
-    margin: 5px 5px 0 0;
+    margin-right: 8px;
 }
 
+/* Score Section */
 .score-section {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
-.score-text {
-    font-size: 14px;
-}
-
+/* Gold Ring */
 .score-ring {
-    width: 80px;   /* 🔥 50% reduced size */
+    width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 6px solid gold;
+    background: conic-gradient(gold 87%, #eee 0%);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.score-ring::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.score-ring span {
+    position: relative;
     font-weight: bold;
     font-size: 18px;
 }
 
+/* Stats */
 .stats {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    text-align: center;
 }
 
 .stat {
-    text-align: center;
     font-size: 12px;
 }
 
+/* Button */
 .btn {
     margin-top: 20px;
     text-align: center;
 }
 
 .btn button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    background: #0b3c49;
+    background: linear-gradient(to right, #0b3c49, #092c35);
     color: white;
-    font-size: 16px;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -111,7 +128,7 @@ body {
 <div class="card">
 
     <div class="profile">
-        <img src="https://via.placeholder.com/70" alt="profile">
+        <img src="https://via.placeholder.com/70">
         <div>
             <div class="name">Krishna Mohan Noti</div>
             <div class="role">Chief Life Planner</div>
@@ -124,13 +141,13 @@ body {
     </div>
 
     <div class="score-section">
-        <div class="score-text">
+        <div>
             <strong>YVITY Score</strong><br>
             Based on experience
         </div>
 
         <div class="score-ring">
-            87
+            <span>87</span>
         </div>
     </div>
 
