@@ -1,261 +1,295 @@
-:root {
-    --midnight-teal: #0b3d3d;
-    --saffron-gold: #d4af37;
-    --card-bg: #fcfbf7;
-    --gold-grad: linear-gradient(145deg, #f9f295, #b8860b);
-}
-
-body {
-    background: #eef1f1;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-}
-
-.card-container {
-    width: 400px;
-    background: var(--card-bg);
-    border-radius: 35px;
-    padding: 30px;
-    border: 1px solid #e0dbcd;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px); /* Subtle texture */
-    background-size: 20px 20px;
-}
-
-/* Profile Section */
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.profile-pic-wrapper {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    padding: 4px;
-    background: var(--gold-grad);
-    border-radius: 50%;
-}
-
-.profile-pic-wrapper img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-}
-
-.check-badge {
-    position: absolute;
-    bottom: 5px;
-    right: 0;
-    background: #1a4d4d;
-    color: white;
-    font-size: 10px;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-.advisor-info h1 {
-    font-size: 22px;
-    margin: 0;
-    color: var(--midnight-teal);
-}
-
-.advisor-info .title {
-    color: var(--saffron-gold);
-    margin: 2px 0;
-    font-weight: 600;
-}
-
-/* Tags */
-.tags-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-
-.tag-item {
-    background: #f1f4f4;
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    color: var(--midnight-teal);
-    border: 1px solid #d8e2e2;
-}
-
-/* Score Section with Ring */
-.score-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin-bottom: 25px;
-    padding-right: 10px;
-}
-
-.score-details h3 {
-    margin: 0;
-    color: var(--midnight-teal);
-}
-
-.score-details p {
-    font-size: 11px;
-    color: #777;
-    max-width: 180px;
-}
-
-.top-rank {
-    color: var(--saffron-gold);
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* 50% Size Ring Logic */
-.score-ring-outer {
-    width: 100px;
-    height: 100px;
-    background: var(--gold-grad);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 8px 15px rgba(184, 134, 11, 0.3);
-}
-
-.score-ring-inner {
-    width: 88px;
-    height: 88px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.score-num {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--midnight-teal);
-}
-
-.score-label {
-    background: var(--midnight-teal);
-    color: var(--saffron-gold);
-    font-size: 8px;
-    width: 100%;
-    text-align: center;
-    padding: 3px 0;
-    position: absolute;
-    bottom: 15px;
-}
-
-/* Metrics Row */
-.metrics-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-
-.metric {
-    flex: 1;
-    background: white;
-    padding: 10px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border-bottom: 3px solid var(--saffron-gold);
-}
-
-.metric strong { display: block; color: var(--midnight-teal); font-size: 16px; }
-.metric span { font-size: 10px; color: #999; }
-
-/* Button */
-.primary-btn {
-    width: 100%;
-    padding: 18px;
-    background: var(--midnight-teal);
-    color: var(--saffron-gold);
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(11, 61, 61, 0.3);
-}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Advisor Card</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Advisor Profile Card</title>
+    <style>
+        :root {
+            --midnight-teal: #0b3d3d;
+            --saffron-gold: #d4af37;
+            --gold-gradient: linear-gradient(135deg, #f9f295, #e0aa3e, #b8860b, #f9f295);
+            --teal-gradient: linear-gradient(135deg, #0b3d3d, #1a5e5e);
+            --bg-off-white: #fcfbf7;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Main Card Container */
+        .profile-card {
+            width: 380px;
+            background: var(--bg-off-white);
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            text-align: left;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            padding: 3px;
+            background: var(--gold-gradient);
+            margin-right: 15px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: -5px;
+            background: #1a5e20;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        .info h2 {
+            margin: 0;
+            color: var(--midnight-teal);
+            font-size: 20px;
+        }
+
+        .info p {
+            margin: 2px 0;
+            color: #b8860b;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .location {
+            color: #777 !important;
+            font-size: 12px !important;
+        }
+
+        /* Tag Section */
+        .tags {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #f0f4f4;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: var(--midnight-teal);
+            display: flex;
+            align-items: center;
+            border: 1px solid #d1dbdb;
+        }
+
+        /* Score Section */
+        .score-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.05));
+            padding: 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .score-text h4 {
+            margin: 0;
+            color: var(--midnight-teal);
+        }
+
+        .score-text p {
+            font-size: 11px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .top-advisor {
+            color: var(--saffron-gold);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* Circular Score Ring (50% scale adjustment) */
+        .score-ring {
+            width: 90px; /* Reduced Size */
+            height: 90px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .ring-inner {
+            width: 78px;
+            height: 78px;
+            background: var(--bg-off-white);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .ring-inner .number {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--midnight-teal);
+        }
+
+        .ring-label {
+            width: 100%;
+            background: var(--midnight-teal);
+            color: var(--saffron-gold);
+            font-size: 8px;
+            text-align: center;
+            padding: 4px 0;
+            position: absolute;
+            bottom: 15px;
+        }
+
+        /* Metrics Row */
+        .metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .metric-box {
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+            text-align: center;
+            flex: 1;
+            margin: 0 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--saffron-gold);
+        }
+
+        .metric-box strong {
+            display: block;
+            font-size: 16px;
+            color: var(--midnight-teal);
+        }
+
+        .metric-box span {
+            font-size: 10px;
+            color: #888;
+        }
+
+        /* Primary Button */
+        .view-btn {
+            width: 100%;
+            background: var(--teal-gradient);
+            color: var(--saffron-gold);
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body>
 
-    <div class="card-container">
-        <!-- Profile Header -->
-        <div class="card-header">
-            <div class="profile-pic-wrapper">
-                <img src="https://via.placeholder.com/100" alt="Advisor">
-                <div class="check-badge">✔</div>
+    <div class="profile-card">
+        <div class="header">
+            <div class="photo-container">
+                <!-- Replace with actual image URL -->
+                <img src="https://via.placeholder.com/80" alt="Krishna Mohan">
+                <div class="verified-badge">✔</div>
             </div>
-            <div class="advisor-info">
-                <h1>Krishna Mohan Noti</h1>
-                <p class="title">Chief Life Planner</p>
-                <p class="location">📍 Nellore, AP</p>
+            <div class="info">
+                <h2>Krishna Mohan Noti</h2>
+                <p>Chief Life Planner</p>
+                <div class="location">📍 Nellore, AP</div>
             </div>
         </div>
 
-        <!-- Tags Section -->
-        <div class="tags-grid">
-            <div class="tag-item">🛡️ Life Insurance</div>
-            <div class="tag-item">➕ Health Insurance</div>
-            <div class="tag-item">🏆 Founding Member</div>
-            <div class="tag-item">🚩 MDRT Member</div>
+        <div class="tags">
+            <div class="tag">🛡️ Life Insurance</div>
+            <div class="tag">➕ Health Insurance</div>
+            <div class="tag">🏆 Founding Member</div>
+            <div class="tag">🚩 MDRT Member</div>
         </div>
 
-        <!-- Score Section -->
-        <div class="score-container">
-            <div class="score-details">
-                <h3>YVITY Score</h3>
-                <p>Based on experience, client feedback & performance</p>
-                <span class="top-rank">Top 10% Advisor</span>
+        <div class="score-section">
+            <div class="score-text">
+                <h4>YVITY Score</h4>
+                <p>Based on experience, client feedback<br>& performance</p>
+                <div class="top-advisor">Top 10% Advisor</div>
             </div>
-            
-            <!-- Small 50% Reduced Score Ring -->
-            <div class="score-ring-outer">
-                <div class="score-ring-inner">
-                    <span class="score-num">87<small>/100</small></span>
-                    <div class="score-label">YVITY SCORE</div>
+            <div class="score-ring">
+                <div class="ring-inner">
+                    <div class="number">87<small>/100</small></div>
+                    <div class="ring-label">YVITY SCORE</div>
                 </div>
             </div>
         </div>
 
-        <!-- Metrics Row -->
-        <div class="metrics-row">
-            <div class="metric"><strong>10+</strong><span>Years Exp.</span></div>
-            <div class="metric"><strong>32</strong><span>Reviews</span></div>
-            <div class="metric"><strong>12</strong><span>Recommnds</span></div>
-            <div class="metric"><strong>200+</strong><span>Clients</span></div>
+        <div class="metrics">
+            <div class="metric-box">
+                <strong>10+</strong>
+                <span>Years Exp.</span>
+            </div>
+            <div class="metric-box">
+                <strong>32</strong>
+                <span>Reviews</span>
+            </div>
+            <div class="metric-box">
+                <strong>12</strong>
+                <span>Recommnds</span>
+            </div>
+            <div class="metric-box">
+                <strong>200+</strong>
+                <span>Clients</span>
+            </div>
         </div>
 
-        <!-- Action Button -->
-        <button class="primary-btn">View Profile &rarr;</button>
+        <button class="view-btn">
+            View Profile &rarr;
+        </button>
     </div>
 
 </body>
